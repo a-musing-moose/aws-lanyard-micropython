@@ -1,4 +1,4 @@
-from machine import SPI, Pin
+from machine import Pin, SPI, TouchPad
 
 
 class LEDRing(object):
@@ -47,3 +47,7 @@ class LEDRing(object):
     def rotate(self):
         self.leds = self.leds[-1:] + self.leds[:-1]
         self.write()
+
+
+def get_touchpad():
+    return TouchPad(Pin(2))
